@@ -8,6 +8,7 @@ var es6ify = require('es6ify');
 var reactify = require('reactify');
 var source = require('vinyl-source-stream');
 var streamify = require('gulp-streamify');
+var browserSync = require('browser-sync');
 // var sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
@@ -16,6 +17,20 @@ var paths = {
   vendor_styles: 'project/web/frontend/static/css/*.css',
   styles: 'project/web/frontend/static/less/*.less'
 };
+
+function browserSyncInit(baseDir, browser) {
+    browser = browser === undefined ? 'default' : browser;
+
+    var server = {
+      baseDir: baseDir
+    };
+
+    browserSync.instance = browserSync.init({
+      startPath: '/',
+      server: server,
+      browser: browser
+    });
+}
 
 gulp.task('scripts', function () {
     es6ify.traceurOverrides = {experimental: true};
@@ -26,7 +41,7 @@ gulp.task('scripts', function () {
         .bundle()
         .pipe(source('app.js'))
         // .pipe(streamify(sourcemaps.init()))
-        .pipe(streamify(concat('app.min.js')))
+        // .pipe(streamify(concat('app.min.js')))
         // .pipe(uglify())
         // .pipe(sourcemaps.write())
         .pipe(gulp.dest('project/web/frontend/static/dist/js'));
@@ -52,4 +67,8 @@ gulp.task('watch', function() {
   gulp.watch(paths.styles, ['styles']);
 });
 
-gulp.task('default', ['watch', 'scripts', 'vendor-styles', 'styles']);
+gulp.task('default', ['scripts', 'vendor-styles', 'styles']);
+
+gulp.task('serve', ['watch', 'default'], function () {
+	browserSyncInit(['.tmp' + '/serve', 'project/web/frontend/static']);
+});
