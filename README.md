@@ -1,22 +1,20 @@
-[![Build status](https://travis-ci.org/nithinpb/scan-crawler.svg?branch=master)](https://travis-ci.org/nithinpb)
+[![Build status](https://travis-ci.org/nithinpb/react-scan-crawler.svg?branch=master)](https://travis-ci.org/nithinpb/react-scan-crawler)
 
-# Scan Crawler
+# React Scan Crawler
 
-A project to crawl/scrape seed urls based on depth requested. This is a basic project in python for web-crawling using the tools described below. 
+A project to crawl/scrape seed urls based on depth requested. This is a basic project in python for web-crawling using the tools described below. This project is based on [Scan Crawler](https://github.com/nithinpb/scan-crawler) which uses AngularJS instead of ReactJS.
 
 ### Screenshot
-
-![Scan Crawler](project/web/frontend/static/img/screenshot.png?raw=true "Scan Crawler Screenshot")
 
 ### Tools 
 
 	1. Python 2.7
 	2. Flask (Micro web framework)
 	3. Beautifulsoup (For basic implementation. Can be upgraded to scrapy for production needs)
-	4. AngularJS 1.x, Bootstrap 3.x (Frontend)
+	4. React (Frontend)
 	5. Docker (Containerization, Sandbox)
 
-demonstrating the usage of Flask, Beautifulsoup crawler, AngularJS and Docker. 
+demonstrating the usage of Flask, Beautifulsoup crawler, ReactJS and Docker. 
 
 ### Local Development
 
@@ -27,12 +25,12 @@ demonstrating the usage of Flask, Beautifulsoup crawler, AngularJS and Docker.
 
 #### 1. Clone the project:
 
-	$ git clone https://github.com/nithinpb/scan-crawler.git
-	$ cd scan-crawler
+	$ git clone https://github.com/nithinpb/react-scan-crawler.git
+	$ cd react-scan-crawler
 
 #### 2. Install packages:
 
-	$ mkvirtualenv scan-crawler # or workon scan-crawler if you have already installed
+	$ mkvirtualenv react-scan-crawler # or workon react-scan-crawler if you have already installed
 	$ pip install -r requirements.txt
 
 #### 3. Run the application:
@@ -47,12 +45,12 @@ demonstrating the usage of Flask, Beautifulsoup crawler, AngularJS and Docker.
 
 #### 1. Build the image
 
-	$ docker build -t scan-crawler .
+	$ docker build -t react-scan-crawler .
 	$ docker images # Verify the image in your local docker repo
 
 #### 2. Run the image with your local port mapping	
 
-	$ docker run -d -p 5000:5000 --name scan-crawler-service scan-crawler
+	$ docker run -d -p 5000:5000 --name react-scan-crawler-service react-scan-crawler
 
 ### Tests
 
