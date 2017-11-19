@@ -2,15 +2,10 @@ from functools import wraps
 
 from flask import render_template
 from project import factory
-from project.web.frontend import assets
-
 
 def create_app(settings_override=None):
     """Returns the frontend application instance"""
     app = factory.create_app(__name__, __path__, settings_override)
-
-    # Init assets
-    assets.init_app(app)
 
     # Register custom error handlers
     if not app.debug:
