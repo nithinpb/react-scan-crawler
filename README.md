@@ -22,6 +22,7 @@ demonstrating the usage of Flask, Beautifulsoup crawler, ReactJS and Docker.
 
 	Install Python, Pip, virtualenv, virtualenvwrapper
 	$ pip -V #Version of the file
+	$ pip install pip-chill # For pip-chill > requirements.txt
 
 #### 1. Clone the project:
 
