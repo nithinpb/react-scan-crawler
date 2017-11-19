@@ -23,5 +23,34 @@
   "bugs": {
     "url": "https://github.com/nithinpb/react-scan-crawler/issues"
   },
-  "homepage": "https://github.com/nithinpb/react-scan-crawler#readme"
+  "homepage": "https://github.com/nithinpb/react-scan-crawler#readme",
+  "devDependencies": {
+    "//": [
+      "bluebird: Enable promises for non-promise supported libraries",
+      "browserify: Enable require for browsers",
+      "es6ify: Enable ES6 features",
+      "immutable: Create immutable JS structures",
+      "react: ReactJS",
+      "streamify: Create reactive stream in JS",
+      "reactify: React boilerplate",
+      "vinyl-source-stream: Convert react streams into gulp streams?",
+      "gulp: Build task"
+    ],
+    "bluebird": "^3.5.1", 
+    "browserify": "^14.5.0",
+    "es6ify": "^1.6.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^3.3.2",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^3.0.0",
+    "immutable": "^3.8.2",
+    "jquery": "^3.2.1",
+    "react": "^16.1.1",
+    "reactify": "^1.1.1",
+    "streamify": "^0.3.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
 }

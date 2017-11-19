@@ -55,3 +55,7 @@ demonstrating the usage of Flask, Beautifulsoup crawler, ReactJS and Docker.
 ### Tests
 
 	$ nosetests -v
+
+### References
+
+#### 1. Gulp recipes used from [Gulp Repo](https://github.com/gulpjs/gulp/tree/master/docs/recipes)
