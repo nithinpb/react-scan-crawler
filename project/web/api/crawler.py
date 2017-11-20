@@ -20,6 +20,7 @@ def sample():
 
 @route(bp, '/crawl/')
 def execute():
-    seed = _validate_seed( request.args.get('seed') )
-    depth = _validate_depth( request.args.get('depth') )
+    seed = request.args.get('seed')
+    depth = request.args.get('depth')
+    print seed, depth
     return BasicCrawler(seed, depth).start_crawl()

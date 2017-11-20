@@ -70,5 +70,5 @@ gulp.task('watch', function() {
 gulp.task('default', ['scripts', 'vendor-styles', 'styles']);
 
 gulp.task('serve', ['watch', 'default'], function () {
-	browserSyncInit(['.tmp' + '/serve', 'project/web/frontend/static']);
+	browserSyncInit(['.tmp' + '/serve', 'project/web/frontend']);
 });

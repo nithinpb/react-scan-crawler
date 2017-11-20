@@ -20,11 +20,14 @@ class BasicCrawler(object):
         self.depth = self._validate_depth( depth )
 
     def _validate_seed( self, seed ): 
-        if not seed or not isinstance(seed, str): 
+        if not seed: 
             raise ApplicationError("seed must be a string.")
 
-        if seed.index('http://') == 0 or seed.index('https://') == 0:
-            return seed
+        try: 
+            if seed.index('http://') == 0 or seed.index('https://') == 0:
+                return seed
+        except ValueError:
+            return "http://" + seed
 
         return "http://" + seed
 
@@ -33,10 +36,7 @@ class BasicCrawler(object):
         if depth is None: 
             raise ApplicationError("depth must be a number.")
 
-        if isinstance(depth, str) and not depth.isdigit():
-            return int(depth)
-
-        return depth
+        return int(depth)
         
     def start_crawl( self, seed=None, depth=None ): 
         seed = seed or self.seed
