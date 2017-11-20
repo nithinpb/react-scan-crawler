@@ -33,10 +33,15 @@ demonstrating the usage of Flask, Beautifulsoup crawler, ReactJS and Docker.
 
 	$ mkvirtualenv react-scan-crawler # or workon react-scan-crawler if you have already installed
 	$ pip install -r requirements.txt
+	$ npm install # For node related packages
+
+#### 3. UI server: 
+
+	$ gulp serve # Runs a minimal express server with browserSync
 
 #### 3. Run the application:
 
-	$ python manage.py runserver
+	$ gulp && python manage.py runserver
 
 #### 4. Configuration changes:
 	$ # Change settings.py for port changes
